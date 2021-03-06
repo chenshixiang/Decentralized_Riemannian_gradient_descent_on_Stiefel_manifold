@@ -12,7 +12,7 @@ Please cite this paper if you use this code in your published research project.
 
 
 
-# Prerequisites:
+## Prerequisites:
 python 3.6+   
 numpy   
 matplotlib  
@@ -20,11 +20,11 @@ mpi4py 3.0.3
 networkx 2.5	  
 pickle  
 
-# Files:  
+## Files:  
 algs: the source codes for DRGTA and DRSGD  
 demo_DRGTA.py and demo_DRSGD.py:  examples showing how to use these two algorithms for solving the decentralized PCA problem
 
-# Usage
+## Usage
 The demos show how to use the two algorithms to solve the decentralized PCA problem.	
 To run on 8 cores/devices of DRSGD algorithm, you can use the following command:  
 
@@ -36,7 +36,7 @@ To run on 8 cores/devices of DRGTA algorithm, you can use the following command:
 
 
 
-# Results Explanation 
+## Results Explanation 
 Epoch:  number of iteration 
 Total CPU time(including compute average using All_Reduce)  
 Local total CPU time(exclude All_Reduce and computation on mean) 	   
@@ -53,7 +53,7 @@ Distance to ground truth..
   
 The results are stored in pkl files.  
 
-# Support Euclidean space algorithms
+### Support Euclidean space algorithms
 This code also supports Euclidean space problem. You only need to set the manifold to Euclidean, which is defined in [ManifoldToolbox](./misc/ManifoldToolbox.py)
 
 If you have any questions or find any bugs, feel free to contact Shixiang Chen chenshxiang@gmail.com.

@@ -13,7 +13,7 @@ Please cite this paper if you use this code in your published research project.
 
 
 # Prerequisites:
-python 3.7+   
+python 3.6+   
 numpy   
 matplotlib  
 mpi4py 3.0.3   

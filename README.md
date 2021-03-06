@@ -39,8 +39,8 @@ To run on 8 cores/devices of DRGTA algorithm, you can use the following command:
 # Results Explanation 
 Epoch:  number of iteration 
 Total CPU time(including compute average using All_Reduce)  
-Local total CPU time(exclude All_Reduce and computation on mean) 
-Consensus time: total  time of consensus iteration  
+Local total CPU time(exclude All_Reduce and computation on mean) 	   
+Consensus time: total  time of consensus iteration     
 Local obj function time: time of computing local gradient and objetive value  
 Local retraction time: time of computing local retraction 
 Projection time:  time of computing projection onto tangent space 

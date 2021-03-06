@@ -5,7 +5,6 @@ from misc.Graph import Graph
 from algs.decentralized_RGD import DecenRiemannianGradientStochasticDescent
 from misc.ManifoldToolbox import StiefelManifold  # set manifold
 from Quadratic_object.Quadraic import Quadratic
-
 from algs.run_algorithm import demo
 
 

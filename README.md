@@ -16,8 +16,8 @@ Please cite this paper if you use this code in your published research project.
 python 3.7+   
 numpy   
 matplotlib  
-mpi4py    
-networkx  
+mpi4py 3.0.3   
+networkx 2.5
 pickle  
 
 # Files:  

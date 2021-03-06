@@ -53,7 +53,7 @@ Distance to ground truth..
   
 The results are stored in pkl files.  
 
-# Support Euclidean space problem
+# Support Euclidean space algorithms
 This code also supports Euclidean space problem. You only need to set the manifold to Euclidean, which is defined in [ManifoldToolbox](./misc/ManifoldToolbox.py)
 
 If you have any questions or find any bugs, feel free to contact Shixiang Chen chenshxiang@gmail.com.

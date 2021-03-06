@@ -54,4 +54,5 @@ Distance to ground truth..
 The results are stored in pkl files.  
 
 # Euclidean space problem
-This code also supports Euclidean space problem. You only need to set the manifold as Euclidean, which is defined in the 
+This code also supports Euclidean space problem. You only need to set the manifold as Euclidean, which is defined in  
+(./misc/ManifoldToolBox)

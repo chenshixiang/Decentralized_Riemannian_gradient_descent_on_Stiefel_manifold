@@ -17,7 +17,7 @@ python 3.7+
 numpy   
 matplotlib  
 mpi4py 3.0.3   
-networkx 2.5
+networkx 2.5	
 pickle  
 
 # Files:  

@@ -41,15 +41,15 @@ Epoch:  number of iteration
 Total CPU time(including compute average using All_Reduce)  
 Local total CPU time(exclude All_Reduce and computation on mean) 	   
 Consensus time: total  time of consensus iteration     
-Local obj function time: time of computing local gradient and objetive value  
-Local retraction time: time of computing local retraction 
-Projection time:  time of computing projection onto tangent space 
-MPI (All)Reduce time: CPU time of MPI Reduce and Allreduce time when the average point is computed  
-time of computation on mean : CPU time of computing  gradient and objetive value at average point 
-Consensus_error:  the consensus error, Frobenius norm 
-Riemannian grad norm at manifold average..  
-Objective val: objective value at average point 
-Distance to ground truth..  
+Local obj function time: time of computing local gradient and objetive value     
+Local retraction time: time of computing local retraction    
+Projection time:  time of computing projection onto tangent space     
+MPI (All)Reduce time: CPU time of MPI Reduce and Allreduce time when the average point is computed     
+time of computation on mean : CPU time of computing  gradient and objetive value at average point       
+Consensus_error:  the consensus error, Frobenius norm     
+Riemannian grad norm at manifold average..     
+Objective val: objective value at average point      
+Distance to ground truth..     
   
 The results are stored in pkl files.  
 

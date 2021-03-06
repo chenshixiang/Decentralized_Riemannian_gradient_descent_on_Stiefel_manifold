@@ -21,7 +21,7 @@ networkx
 pickle  
 
 # Files:  
-misc: the source codes for DRGTA and DRSGD  
+algs: the source codes for DRGTA and DRSGD  
 demo_DRGTA.py and demo_DRSGD.py:  examples showing how to use these two algorithms for solving the decentralized PCA problem
 
 # Usage
@@ -55,4 +55,4 @@ The results are stored in pkl files.
 
 # Euclidean space problem
 This code also supports Euclidean space problem. You only need to set the manifold as Euclidean, which is defined in  
-(./misc/ManifoldToolBox)
+[ManifoldToolBox](./misc/ManifoldToolBox)

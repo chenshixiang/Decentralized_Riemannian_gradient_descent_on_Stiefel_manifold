@@ -1,6 +1,6 @@
 """ a collection of doubly stochastic matrix for connected graph """
 import numpy as np
-from networkx import nx
+import networkx as nx
 import matplotlib.pyplot as plt
 """ Graph package """
 __license__ = 'MIT'

@@ -176,7 +176,8 @@ class DecenRiemannianGradientTracking:
             Iter += 1
         if log:
             RGD_log.log(est_var=x, time_consensus=self.CONS.consensus_time, time_local_obj=self.time_local_obj,
-                        time_local_ret=self.time_local_ret, time_projection=self.time_local_proj)
+                        time_local_ret=self.time_local_ret, time_projection=self.time_local_proj,
+                        time_communication=self.CONS.communication_time)
         """ compute the average point and average gradient """
         if not self.record_consensus_error:
             manifold_average_variable = self.CONS.compute_manifold_mean(x, self.manifold)

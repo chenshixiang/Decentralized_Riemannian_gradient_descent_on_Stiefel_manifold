@@ -58,11 +58,12 @@ class Log(object):
         self.reduce_time = 0
         self.mean_obj_time = 0
         self.time_projection = 0
+        self.time_communication = 0
 
     def log(self, Algname=None, data_shape=None, Iter=None, objval_ave=None, opt_var=None, opt_objval=None, ave_grad_norm=None,
             consen_error=None, distance_to_opt=None, opt_estimate_var=None, opt_estimate_obj=None, record_time=None, time_consensus=None,
             consensus_it=None, grad_stepsize=None, est_var=None, size=None, graph=None, time_local_obj=None, time_local_ret=None,
-            reduce_time=None, mean_obj_time=None, time_projection=None):
+            reduce_time=None, mean_obj_time=None, time_projection=None, time_communication=None):
         """ Log the variables, grad norm, function value with an iteration and time. """
         if Algname is not None:
             self.Algname = Algname
@@ -96,6 +97,8 @@ class Log(object):
             self.effective_time = self.end_time - self.record_time
         if time_consensus is not None:
             self.consensus_time = time_consensus
+        if time_communication is not None:
+            self.time_communication = time_communication
         if consensus_it is not None:
             self.consensus_it = consensus_it
         if grad_stepsize is not None:
@@ -126,7 +129,7 @@ class Log(object):
         print(f'Epoch: {self.end_iter};\n'
               f'Total CPU time(including compute average using All_Reduce): {self.end_time:.3f};\n'
               f'Local total CPU time(exclude All_Reduce and computation on mean): {self.effective_time:.3f};\n'
-              f'Consensus time: {self.consensus_time:.3f};\n'
+              f'Consensus time: {self.consensus_time:.3f}, where communication time: {self.time_communication:.3f};\n'
               f'Local obj function time: {self.time_local_obj:.3f};\n'
               f'Local retraction time: {self.time_local_ret:.3f};\n'
               f'Projection time: {self.time_projection:.3f};\n'

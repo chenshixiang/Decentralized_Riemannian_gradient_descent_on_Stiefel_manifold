@@ -4,7 +4,7 @@ Python implementation of the decentralized Riemannian stochastic(DRSGD) and dece
 @article{chen2021decentralized, 
   title={Decentralized Riemannian Gradient Descent on the Stiefel Manifold},  
   author={Chen, Shixiang and Garcia, Alfredo and Hong, Mingyi and Shahrampour, Shahin}, 
-  journal={ICML},  
+  conference={ICML},  
   year={2021} 
 }
   

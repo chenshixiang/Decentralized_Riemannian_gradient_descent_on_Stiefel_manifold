@@ -41,6 +41,7 @@ class EuclideanConsensus:
         self.terminate_by_time = terminate_by_time
         self.num_consensus_itr = num_consensus_itr
         self.consensus_time = 0
+        self.communication_time = 0
         self.reduce_time = 0
         self.mean_obj_time = 0
         self.hold_on_time = hold_on_time
@@ -66,22 +67,26 @@ class EuclideanConsensus:
     #             warnings('wait too long for recieving, may deadlock...')
 
     def send_to_neighbors(self, x):
+        t0 = MPI.Wtime()
         for i in self.peer:
             comm.Send(x, dest=i, tag=rank)
+        self.communication_time += MPI.Wtime() - t0
 
     def collect_from_neighbors(self, x):
         x = x * self.weight[rank]
         # wait_time_start = MPI.Wtime()
-        while True:
-            for i in self.peer:
-                # status = MPI.Status()
-                # while not comm.Probe(source=MPI.ANY_SOURCE, status=status):
-                #     pass
-                recvbuf = np.empty(x.shape, dtype=np.float64)
-                comm.Recv(recvbuf, source=i)
-                x += self.weight[i] * recvbuf
-                # del status
-            return x
+        # while True:
+        for i in self.peer:
+            # status = MPI.Status()
+            # while not comm.Probe(source=MPI.ANY_SOURCE, status=status):
+            #     pass
+            recvbuf = np.empty(x.shape, dtype=np.float64)
+            t0 = MPI.Wtime()
+            comm.Recv(recvbuf, source=i)
+            self.communication_time += MPI.Wtime() - t0
+            x += self.weight[i] * recvbuf
+            # del status
+        return x
             # if MPI.Wtime() - wait_time_start > hold_on_time:
             #     warnings('wait too long for recieving, may deadlock...')
 
@@ -90,9 +95,17 @@ class EuclideanConsensus:
         for _ in range(self.num_consensus_itr):
             self.send_to_neighbors(x)
             x = self.collect_from_neighbors(x)
-            comm.Barrier()
+            # comm.Barrier()
         self.consensus_time += MPI.Wtime() - t0
         return x
+    # def consensus(self, x):
+    #     t0 = MPI.Wtime()
+    #     for _ in range(self.num_consensus_itr):
+    #         self.send_to_neighbors(x)
+    #         x = self.collect_from_neighbors(x)
+    #         comm.Barrier()
+    #     self.consensus_time += MPI.Wtime() - t0
+    #     return x
 
     def compute_manifold_mean(self, x, manifold):
         euclidean_average_variable = np.empty(x.shape, dtype=np.float64)
